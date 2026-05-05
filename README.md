@@ -37,7 +37,7 @@ The total is:
 | `:)`     | Declare a new variable   | 
 | `:/`     | Manipulate a variable    | 
 | `:(`     | If statement             | 
-| `:|`     | Else statement           | 
+| `:]`     | Else statement           | 
 | `@@`     | Define loop              |
 | `xD`     | Print to screen          | 
 | `~`      | End of line              | 
