@@ -150,4 +150,23 @@ python interpreter.py helloworld.emo
 ` ` `
 ```
 
+##  State of the Language
+
+###  What is Working
+
+- **The Lexer** — Successfully uses Regular Expressions to identify 10+ token types, including variables, keywords, and emoticons.
+- **Variable Declaration** — Correct grammar for assigning values to `o_o` (int) and `OwO` (string) variables.
+- **Print Functionality** — The `xD` statement correctly outputs both raw strings and stored variable values to the console.
+- **Basic Control Flow** — The interpreter can handle simple, single-level loops (`@_@`) and if-statements (`:(`.
+- **AST Generation** — The parser correctly produces an Abstract Syntax Tree in JSON format, as required by the rubric.
+
+---
+
+### Couldn't get to work
+
+- **Nested Loops/Logic** — Placing a loop inside another loop or an if-statement may currently confuse the basic parser.
+- **Complex Math Operations** — The language only supports basic left-to-right math and does not yet follow full Order of Operations (PEMDAS).
+- **Boolean Logic** — While the `^-^` type is defined, complex logical comparisons (e.g. `AND` / `OR`) are not yet fully implemented.
+- **Function Definitions** — The `roll initiative` structure for custom functions is defined in the documentation but is not currently supported by the interpreter.
+
 
