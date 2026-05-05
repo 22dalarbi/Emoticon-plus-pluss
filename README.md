@@ -122,6 +122,3 @@ comment         = "(⊙_⊙)" , { character } , "(⊙_⊙)" ;
 ---
 
 
-
-12. `:) [varName] [varType] [varName] [mathOperator] [varName] ~`  
-    *(Declaring a variable as the result of math between two others)*
