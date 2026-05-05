@@ -69,40 +69,59 @@ The total is:
 
 
 
-<h1>Valid Grammars</h1>
+<h1>Valid Grammar</h1>
 
-1. `:) [varName] [varType] [value] ~`  
-   *(Standard variable declaration)*
+```ebnf
+(* High-level program structure *)
+program         = { statement } ;
+statement       = ( declaration
+                  | assignment
+                  | print
+                  | loop
+                  | condition
+                  | comment ) "~" ;
 
-2. `:) [varName] [varType] +[stringValue]+ ~`  
-   *(String variable declaration using sparkles)*
+(* Variable Declarations *)
+declaration     = ":)" , identifier , type , expression ;
+type            = "o_o"             (* number  *)
+                | "OwO"             (* string  *)
+                | "^-^" ;           (* boolean *)
 
-3. `:/ [varName] [number] ~`  
-   *(Directly updating a variable to a new number)*
+(* Variable Manipulation *)
+assignment      = ":/" , identifier , expression ;
 
-4. `:/ [varName] [varName] [mathOperator] [number] ~`  
-   *(Variable manipulation with math)*
+(* Output *)
+print           = "xD" , ( identifier | string ) ;
 
-5. `xD [varName] ~`  
-   *(Printing the value of a variable)*
+(* Control Structures *)
+condition       = ":(" , logical_expr , ")" ,
+                  "[" , { statement } , "]" ,
+                  [ ":|" , "[" , { statement } , "]" ] ;
 
-6. `xD +[stringValue]+ ~`  
-   *(Printing a raw string)*
+loop            = "@_@" , ( integer | identifier ) ,
+                  "[" , { statement } , "]" ;
 
-7. `@@ [number] [ [code] ]`  
-   *(Fixed-count loop)*
+(* Expressions *)
+expression      = value | ( value , binary_op , value ) ;
+logical_expr    = value , comp_op , value ;
+value           = identifier | integer | string | boolean ;
 
-8. `@@ [varName] [ [code] ]`  
-   *(Looping based on a variable’s value)*
+(* Operators *)
+binary_op       = "+" | "-" | "*" | "/" ;
+comp_op         = "==" | "!=" | ">" | "<" | ">=" | "<=" ;
 
-9. `:( [condition] ) [ [code] ]`  
-   *(If statement block)*
+(* Terminals *)
+identifier      = letter , { letter | digit } ;
+string          = "+" , { character } , "+" ;
+integer         = [ "-" ] , digit , { digit } ;
+boolean         = "✅" | "❌" ;
+comment         = "(⊙_⊙)" , { character } , "(⊙_⊙)" ;
+` ` `
+```
 
-10. `:| [ [code] ]`  
-    *(Else statement block)*
+---
 
-11. `(o_o) [comment text] (o_o)`  
-    *(Stunned face comment wrapper)*
+
 
 12. `:) [varName] [varType] [varName] [mathOperator] [varName] ~`  
     *(Declaring a variable as the result of math between two others)*
