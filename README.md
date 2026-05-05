@@ -121,4 +121,33 @@ comment         = "(⊙_⊙)" , { character } , "(⊙_⊙)" ;
 
 ---
 
+##  How to Run
+
+### Step 1: Organize Your Files
+Make sure all of the following files are in the **same folder** on your computer:
+
+- `lexer.py`
+- `parser.py`
+- `interpreter.py`
+- `helloworld.emo` ]
+
+---
+
+### Step 2: Open Your Terminal
+
+1. **On Windows:** Type `cmd` in the search bar and press Enter.
+2. **On Mac/Linux:** Open the "Terminal" app.
+3. **Navigate to your folder:** Use the `cd` command to go to the folder where you saved the files.
+   - *Example:* `cd Documents/EmoticonProject`
+
+---
+
+### Step 3: Execute the Code
+Run the following command:
+
+```bash
+python interpreter.py helloworld.emo
+` ` `
+```
+
 
